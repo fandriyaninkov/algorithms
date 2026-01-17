@@ -24,4 +24,35 @@ public class SelectingTests
 
         Assert.AreEqual(0, array.Length);
     }
+
+    [TestMethod]
+    public void SingleElementTest()
+    {
+        var array = new[] { 42 };
+        var final = new[] { 42 };
+
+        Selecting.Do(array);
+        CollectionAssert.AreEqual(final, array);
+    }
+
+    [TestMethod]
+    public void SortTest()
+    {
+        var array = new[] { 3, 6, 9, 45, 75 };
+        var final = new[] { 3, 6, 9, 45, 75 };
+
+        Selecting.Do(array);
+        CollectionAssert.AreEqual(final, array);
+    }
+
+    [TestMethod]
+    public void DuplicateElementsTest()
+    {
+        var array = new[] { 7, 5, 56, 3, 7, 18 };
+        var final = new[] { 3, 5, 7, 7, 18, 56 };
+
+        Selecting.Do(array);
+
+        CollectionAssert.AreEqual(final, array);
+    }
 }
