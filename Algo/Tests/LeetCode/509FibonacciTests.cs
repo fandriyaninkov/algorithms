@@ -1,4 +1,5 @@
 ﻿using LeetCode;
+using LeetCode._509_Fibonacci;
 
 namespace Tests.LeetCode;
 
@@ -6,33 +7,13 @@ namespace Tests.LeetCode;
 public class N509FibonacciTests
 {
     [TestMethod]
-    public void FibTest()
+    [DataRow(4, 3)]
+    [DataRow(1, 1)]
+    [DataRow(0, 0)]
+    public void FibTest(int n, int expected)
     {
-        var n = 4;
-
-        var res = N509Fibonacci.Do(n);
-
-        Assert.AreEqual(3, res);
-    }
-
-    [TestMethod]
-    public void Fib1Test()
-    {
-        var n = 1;
-
-        var res = N509Fibonacci.Do(n);
-
-        Assert.AreEqual(1, res);
-    }
-
-    [TestMethod]
-    public void Fib0Test()
-    {
-        var n = 0;
-
-        var res = N509Fibonacci.Do(n);
-
-        Assert.AreEqual(0, res);
+        var res = Recursive.Do(n);
+        Assert.AreEqual(expected, res);
     }
 
     [TestMethod]
@@ -40,7 +21,6 @@ public class N509FibonacciTests
     public void FibNegativeTest()
     {
         var n = -1;
-
-        var res = N509Fibonacci.Do(n);
+        Recursive.Do(n);
     }
 }
