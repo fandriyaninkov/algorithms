@@ -1,5 +1,4 @@
-﻿using LeetCode;
-using LeetCode._509_Fibonacci;
+﻿using LeetCode._509_Fibonacci;
 
 namespace Tests.LeetCode;
 
@@ -22,5 +21,15 @@ public class N509FibonacciTests
     {
         var n = -1;
         Recursive.Do(n);
+    }
+
+    [TestMethod]
+    [DataRow(4, 3)]
+    [DataRow(1, 1)]
+    [DataRow(0, 0)]
+    public void FibDpTest(int n, int expected)
+    {
+        var res = Dp.FibDp(n, new Dictionary<int, int>());
+        Assert.AreEqual(expected, res);
     }
 }

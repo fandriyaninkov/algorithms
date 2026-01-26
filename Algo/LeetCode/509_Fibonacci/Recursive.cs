@@ -1,6 +1,6 @@
 ﻿namespace LeetCode._509_Fibonacci;
 
-/// <summary>Рекурсивная версия. Сложность O(2^n)</summary>
+/// <summary>Рекурсивная версия. Время O(2^n)</summary>
 public static class Recursive
 {
     public static int Do(int n)
