@@ -32,4 +32,14 @@ public class N509FibonacciTests
         var res = Dp.FibDp(n, new Dictionary<int, int>());
         Assert.AreEqual(expected, res);
     }
+
+    [TestMethod]
+    [DataRow(4, 3)]
+    [DataRow(1, 1)]
+    [DataRow(0, 0)]
+    public void FibIterateTest(int n, int expected)
+    {
+        var res = Iterate.Fib(n);
+        Assert.AreEqual(expected, res);
+    }
 }
