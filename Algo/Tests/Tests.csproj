@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Algo\Algo.csproj" />
+    <ProjectReference Include="..\LeetCode\LeetCode.csproj" />
   </ItemGroup>
 
   <ItemGroup>
