@@ -8,15 +8,31 @@ public static class QuickSort
 {
     public static int[] Do(int[] nums)
     {
+        if (nums == null)
+            return Array.Empty<int>();
+
         if (nums.Length < 2)
             return nums;
 
-        var el = nums[0];
-        var less = nums.Skip(1).Where(x => x <= el).ToArray();
-        var greather = nums.Skip(1).Where(x => x > el).ToArray();
-        return Do(less)
+        var pos = new Random().Next(0, nums.Length - 1);
+        var el = nums[pos];
+        var less = new List<int>();
+        var greather = new List<int>();
+        for (var i = 0; i < nums.Length; i++)
+        {
+            if (i == pos)
+                continue;
+
+            var val = nums[i];
+            if (el > val)
+                less.Add(val);
+            else
+                greather.Add(val);
+        }
+
+        return Do(less.ToArray())
             .Concat([el])
-            .Concat(Do(greather))
+            .Concat(Do(greather.ToArray()))
             .ToArray();
     }
 }

@@ -55,4 +55,26 @@ public class QuickTests
 
         CollectionAssert.AreEqual(final, res);
     }
+
+    [TestMethod]
+    public void NegativeElementsTest()
+    {
+        var array = new[] { 0, -1, 5, -10 };
+        var final = new[] { -10, -1, 0, 5 };
+
+        var res = QuickSort.Do(array);
+
+        CollectionAssert.AreEqual(final, res);
+    }
+
+    [TestMethod]
+    public void SameElementsTest()
+    {
+        var array = new[] { 7, 7, 7, 7 };
+        var final = new[] { 7, 7, 7, 7 };
+
+        var res = QuickSort.Do(array);
+
+        CollectionAssert.AreEqual(final, res);
+    }
 }
