@@ -19,10 +19,6 @@ public class Solution
                 while (queue.Count > 0)
                 {
                     var (x, y) = queue.Dequeue();
-                    if (grid[x][y] == '0')
-                        continue;
-
-                    grid[x][y] = '0';
                     AddInQueue(queue, grid, x, y);
                 }
             }
@@ -41,12 +37,24 @@ public class Solution
     private void AddInQueue(Queue<(int, int)> queue, char[][] grid, int x, int y)
     {
         if (CheckInArray(grid, x, y + 1))
+        {
+            grid[x][y + 1] = '0';
             queue.Enqueue((x, y + 1));
+        }  
         if (CheckInArray(grid, x, y - 1))
+        {
+            grid[x][y - 1] = '0';
             queue.Enqueue((x, y - 1));
+        }    
         if (CheckInArray(grid, x + 1, y))
+        {
+            grid[x + 1][y] = '0';
             queue.Enqueue((x + 1, y));
+        }
         if (CheckInArray(grid, x - 1, y))
+        {
+            grid[x - 1][y] = '0';
             queue.Enqueue((x - 1, y));
+        }
     }
 }
