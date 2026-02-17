@@ -1,5 +1,7 @@
 ﻿using LeetCode._733_FloodFill;
 
+namespace Tests.LeetCode;
+
 [TestClass]
 public class N733FloodFill
 {
