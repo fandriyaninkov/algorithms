@@ -9,7 +9,7 @@ public class Solution
         if (root == null) 
             return false;
 
-        return IsSymmetricChild(root.left, root.right);
+        return IsPureSymmetricChild(root.left, root.right);
     }
 
     private bool IsSymmetricChild(TreeNode left, TreeNode rigth)
@@ -27,5 +27,18 @@ public class Solution
         var rightSymmetric = (left.right == null && rigth.left == null) || IsSymmetricChild(left.right, rigth.left);
 
         return leftSymmetric && rightSymmetric;
+    }
+
+    private bool IsPureSymmetricChild(TreeNode left, TreeNode rigth)
+    {
+        if (left == null && rigth == null)
+            return true;
+        if (left == null || rigth == null)
+            return false;
+        if (left.val != rigth.val)
+            return false;
+
+        return IsPureSymmetricChild(left.left, rigth.right)
+            && IsPureSymmetricChild(left.right, rigth.left);
     }
 }
