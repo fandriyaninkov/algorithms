@@ -33,11 +33,9 @@ public class Solution
     }
 
     private bool CheckInArray(int[][] image, int x, int y, int original)
-    {
-        return x >= 0
-            && y >= 0
-            && image.Length - 1 >= x
-            && image[x].Length - 1 >= y 
-            && image[x][y] == original;
-    }
+        => x >= 0
+        && y >= 0
+        && image.Length - 1 >= x
+        && image[x].Length - 1 >= y
+        && image[x][y] == original;
 }
