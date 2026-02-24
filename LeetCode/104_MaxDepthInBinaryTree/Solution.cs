@@ -1,4 +1,6 @@
-﻿namespace LeetCode._104_MaxDepthInBinaryTree;
+﻿using LeetCode.Common;
+
+namespace LeetCode._104_MaxDepthInBinaryTree;
 
 public class Solution
 {
@@ -22,18 +24,5 @@ public class Solution
             right = MaxDepth(node.right, step + 1);
 
         return left > right ? left : right;
-    }
-}
-
-public class TreeNode
-{
-    public int val;
-    public TreeNode left;
-    public TreeNode right;
-    public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-    {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }
